@@ -1,11 +1,10 @@
 Test chapter
 ============
 
-Download button for some input file:
+Download button for an input file which is generated on the fly:
 
 .. only :: builder_html or readthedocs
 
-   See :download:`full input 1 <_mydownloads/md1/dftb_in.hsd>` and
-   :download:`full input 2 <_mydownloads/md2/dftb_in.hsd>`
+   See :download:`Archive with all inputs <_downloads/recipes.tar.xz>`.
 
 Finished.
