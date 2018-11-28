@@ -197,14 +197,14 @@ def create_archives(app):
         os.makedirs(downloaddir)
     archives = os.listdir(archivedir)
     for archive in archives:
-        tarname = os.path.join(_DOWNLOAD_DIR, archive + '.tar.xz')
+        tarname = os.path.join(_DOWNLOAD_DIR, archive + '.tar.gz')
         tarpath = os.path.join(cwd, tarname)
         filename = os.path.join(_ARCHIVE_DIR, archive)
         filepath = os.path.join(cwd, filename)
         tartime = os.path.getmtime(tarpath) if os.path.exists(tarpath) else 0.0
         filetime = _newest_modification_time(filepath)
         if tartime <= filetime:
-            with tarfile.open(tarpath, 'w:xz') as tar:
+            with tarfile.open(tarpath, 'w:gz') as tar:
                 tar.add(filepath, arcname=archive)
             logger.info('Created archive {} from {}'.format(tarname, filename))
         else:
